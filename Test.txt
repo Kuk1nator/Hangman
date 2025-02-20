@@ -1,0 +1,179 @@
+Test #1
+Test Name: Basic Correct Guessing (word CONSOLE)
+Description: The player correctly guesses all the letters of the word CONSOLE without errors.
+Preconditions:
+    1. The words.txt file contains only the word CONSOLE.
+Steps:
+    1. Input: C
+    2. Expected Output: C______
+    3. Input: O
+    4. Expected Output: CO_____
+    5. Input: N
+    6. Expected Output: CON____
+    7. Input: S
+    8. Expected Output: CONS___
+    9. Input: L
+    10. Expected Output: CONSL__
+    11. Input: E
+    12. Expected Output: CONSOLE
+Expected Result:
+    The game ends with the player winning.
+    The message "Congratulations! You guessed the word: CONSOLE" is displayed.
+Test Result: (Pass / Fail)
+Comments:
+
+Test #2
+Test Name: Basic Losing Test (word CONTROLLER, 6 incorrect attempts)
+Description: The player makes 6 incorrect guesses without guessing any letters of the word CONTROLLER.
+Preconditions:
+    1. The words.txt file contains the word CONTROLLER.
+    2. The game is guaranteed to choose the word CONTROLLER.
+Steps:
+    1. Input: A (incorrect)
+    2. Expected Output: __________ (5 attempts remaining)
+    3. Input: B (incorrect)
+    4. Expected Output: __________ (4 attempts remaining)
+    5. Input: C (incorrect)
+    6. Expected Output: __________ (3 attempts remaining)
+    7. Input: D (incorrect)
+    8. Expected Output: __________ (2 attempts remaining)
+    9. Input: E (incorrect)
+    10. Expected Output: __________ (1 attempt remaining)
+    11. Input: F (incorrect)
+    12. Expected Output: __________ (0 attempts remaining)
+Expected Result:
+    The game ends with the player losing.
+    The message "You ran out of tries. The word was: CONTROLLER" is displayed.
+    The hangman drawing is complete.
+Test Result: (Pass / Fail)
+Comments:
+
+Test #3
+Test Name: Repeated Correct Letter Guess (word KEYBOARD)
+Description: The player correctly guesses the letter 'O', then tries to guess it again.
+Preconditions:
+    1. The words.txt file contains the word KEYBOARD.
+    2. The game is guaranteed to choose the word KEYBOARD.
+Steps:
+    1. Input: O
+    2. Expected Output: __YBOAR_
+    3. Input: O
+    4. Expected Output: __YBOAR_
+Expected Result:
+    The number of remaining attempts does not decrease when guessing the same correct letter again.
+    The message "Correct guess!" is displayed only the first time, or an appropriate message is displayed on the repeated input.
+Test Result: (Pass / Fail)
+Comments:
+
+Test #4
+Test Name: Repeated Incorrect Letter Guess (word MOUSE)
+Description: The player enters the incorrect letter 'Z', then tries to enter it again.
+Preconditions:
+    1. The words.txt file contains the word MOUSE.
+    2. The game is guaranteed to choose the word MOUSE.
+Steps:
+    1. Input: Z
+    2. Expected Output: _____ (5 attempts remaining)
+    3. Input: Z
+    4. Expected Output: _____ (5 attempts remaining)
+Expected Result:
+    The number of remaining attempts decreases only on the first incorrect guess.
+    The incorrect letter is not added to the list of incorrect guesses again.
+Test Result: (Pass / Fail)
+Comments:
+
+Test #5
+Test Name: Non-Letter Input (word JOYSTICK)
+Description: The player tries to enter the number 1 instead of a letter.
+Preconditions:
+    1. The words.txt file contains the word JOYSTICK.
+    2. The game is guaranteed to choose the word JOYSTICK.
+Steps:
+    1. Input: 1
+Expected Result:
+    The error message "Invalid input. Please enter a letter." is displayed.
+    The game prompts for input again.
+    The number of attempts does not decrease.
+Test Result: (Pass / Fail)
+Comments:
+
+Test #6
+Test Name: Guessing the Entire Word Correctly (word HEADSET)
+Description: The player immediately guesses the entire word correctly.
+Preconditions:
+    1. The words.txt file contains the word HEADSET.
+    2. The game is guaranteed to choose the word HEADSET.
+Steps:
+    1. Input: HEADSET
+Expected Result:
+    The game ends with the player winning.
+    The message "Congratulations! You guessed the word: HEADSET" is displayed.
+Test Result: (Pass / Fail)
+Comments:
+
+Test #7
+Test Name: Guessing the Entire Word Incorrectly (word MONITOR)
+Description: The player tries to guess the entire word, entering it incorrectly (SCREEN instead of MONITOR).
+Preconditions:
+    1. The words.txt file contains the word MONITOR.
+    2. The game is guaranteed to choose the word MONITOR.
+Steps:
+    1. Input: SCREEN
+Expected Result:
+    The number of attempts decreases by 1.
+    The game continues, showing the hidden word (_______).
+Test Result: (Pass / Fail)
+Comments:
+
+Test #8
+Test Name: Empty words.txt File
+Description: The words.txt file contains no words.
+Preconditions:
+    1. The words.txt file exists, but it's empty.
+Steps:
+    1. Run the game.
+Expected Result:
+    The error message "Error: Word list file is empty." is displayed.
+    The game terminates.
+Test Result: (Pass / Fail)
+Comments:
+
+Test #9
+Test Name: words.txt File Not Found
+Description: The words.txt file is missing from the program's directory.
+Preconditions:
+    1. The words.txt file does not exist.
+Steps:
+    1. Run the game.
+Expected Result:
+    The error message "Error: Word list file not found: words.txt" is displayed.
+    The game terminates.
+Test Result: (Pass / Fail)
+Comments:
+
+Test #10
+Test Name: Mixed Case in words.txt (word gAmEpAd)
+Description: The word GAMEPAD is written as gAmEpAd in the words.txt file. The player enters letters in different cases.
+Preconditions:
+    1. The words.txt file contains the word gAmEpAd.
+    2. The game is guaranteed to choose the word gAmEpAd.
+Steps:
+    1. Input: G
+    2. Expected Output: G______
+    3. Input: a
+    4. Expected Output: GA_____
+    5. Input: M
+    6. Expected Output: GAM____
+    7. Input: e
+    8. Expected Output: GAMe___
+    9. Input: P
+    10. Expected Output: GAMeP__
+    11. Input: A
+    12. Expected Output: GAMEPA_
+    13. Input: d
+    14. Expected Output: GAMEPAD
+Expected Result:
+    The game ends with the player winning.
+    The message "Congratulations! You guessed the word: GAMEPAD" is displayed.
+Test Result: (Pass / Fail)
+Comments:
